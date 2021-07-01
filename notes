@@ -1,0 +1,45 @@
+git push -u origin master
+
+
+Errno::ENOENT at /signup
+No such file or directory @ rb_sysopen - app/views/users/signup.erb
+file: template.rb location: initialize line: 225
+BACKTRACE
+(expand)
+
+JUMP TO: GET POST COOKIES ENV
+/home/MNGiit/Development/sinatra-games-site/app/controllers/users_controller.rb in block in <class:UsersController>
+
+
+
+user attributes name, email, password, Reviews
+
+user urls
+/signup
+/login
+/logout
+/users/:id
+
+game attribute name
+review attribute score
+review belongs to user
+review belongs to game
+
+User.find_by(:name => "Bruce")
+User.find_by(name: "Bruce")
+
+https://guides.rubyonrails.org/association_basics.html
+class Physician < ApplicationRecord
+  has_many :appointments
+  has_many :patients, through: :appointments
+end
+ 
+class Appointment < ApplicationRecord
+  belongs_to :physician
+  belongs_to :patient
+end
+ 
+class Patient < ApplicationRecord
+  has_many :appointments
+  has_many :physicians, through: :appointments
+end
